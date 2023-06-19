@@ -15,6 +15,15 @@ const menu = [
   { title: 'Kontakt', href: '/contact' },
 ];
 
+const dropdownMenu = [
+  {
+    title: 'Kroczek Wojciech', href: '/', content: 'Tutaj będzie kontent',
+  },
+  {
+    title: 'Kroczek Edyta', href: '/', content: 'Tutaj będzie kontent',
+  },
+];
+
 function Nav() {
   return (
     <div className="relative w-2/3 max-w-[1200px] mx-auto">
@@ -31,6 +40,12 @@ function Nav() {
               <MyLink
                 href={menuItem.href}
                 dropDown={menuItem.dropDown}
+                triggerStyles="text-violet11 hover:bg-violet3 focus:shadow-violet7 group flex
+                select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2
+                text-[15px] font-medium leading-none outline-none focus:shadow-[0_0_0_2px]"
+                linkStyles="text-violet11 hover:bg-violet3 focus:shadow-violet7 block
+                select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none
+                no-underline outline-none focus:shadow-[0_0_0_2px]"
               >
                 {menuItem.title}
                 {menuItem.dropDown && (
@@ -52,12 +67,22 @@ function Nav() {
                         className="one list-none gap-x-[10px] px-[130px] py-[22px]
                           sm:w-[500px]"
                       >
-                        <ListItem className="" href="/" title="Kroczek Wojciech">
-                          Tutaj będzie kontent
-                        </ListItem>
-                        <ListItem className="" href="/" title="Kroczek Edyta">
-                          Tutaj będzie kontent
-                        </ListItem>
+                        {
+                          dropdownMenu.map((item) => (
+                            <ListItem
+                              key={item.title}
+                              aStyles="focus:shadow-[0_0_0_2px] focus:shadow-violet7
+                                hover:bg-mauve3 block select-none rounded-[6px] p-3
+                                text-[15px] leading-none no-underline outline-none transition-colors"
+                              title={item.title}
+                              titleStyles="text-violet12 mb-[5px] font-medium leading-[1.2]"
+                              childrenStyles="text-mauve11 leading-[1.4]"
+                              href={item.href}
+                            >
+                              {item.content}
+                            </ListItem>
+                          ))
+                        }
                       </ul>
                     </NavigationMenu.Content>
                   </>
