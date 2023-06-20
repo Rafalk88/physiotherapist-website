@@ -26,15 +26,14 @@ const dropdownMenu = [
 
 function Nav() {
   return (
-    <div className="w-2/3 max-w-[1200px] mx-auto">
-      <NavigationMenu.Root
-        orientation="horizontal"
-        className="relative z-[1] flex justify-end"
+    <NavigationMenu.Root
+      orientation="horizontal"
+      className="relative z-[1] flex justify-end"
+    >
+      <NavigationMenu.List
+        className="center flex list-none p-1"
       >
-        <NavigationMenu.List
-          className="center flex list-none p-1"
-        >
-          {
+        {
           menu.map((menuItem) => (
             <NavigationMenu.Item key={menuItem.title}>
               <MyLink
@@ -92,12 +91,11 @@ function Nav() {
           ))
         }
 
-          <NavigationMenu.Indicator className="top-full z-[1] flex h-[10px] items-end justify-center overflow-hidden">
-            <div className="relative top-[70%] h-[10px] w-[10px] rotate-[45deg] rounded-tl-[2px] bg-white" />
-          </NavigationMenu.Indicator>
-        </NavigationMenu.List>
-      </NavigationMenu.Root>
-    </div>
+        <NavigationMenu.Indicator className="top-full z-[1] flex h-[10px] items-end justify-center overflow-hidden">
+          <div className="relative top-[70%] h-[10px] w-[10px] rotate-[45deg] rounded-tl-[2px] bg-white" />
+        </NavigationMenu.Indicator>
+      </NavigationMenu.List>
+    </NavigationMenu.Root>
   );
 }
 
