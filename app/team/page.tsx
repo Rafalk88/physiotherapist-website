@@ -1,8 +1,9 @@
 import React from 'react';
+import { Container } from '../page';
 
 function Team() {
   return (
-    <div>Team</div>
+    <Container variant="section">Team</Container>
   );
 }
 

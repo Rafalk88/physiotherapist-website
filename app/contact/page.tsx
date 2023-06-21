@@ -1,7 +1,8 @@
 import React from 'react';
+import { Container } from '../page';
 
 function Contact() {
-  return <div>Contact</div>;
+  return <Container variant="section">Contact</Container>;
 }
 
 export default Contact;

@@ -1,7 +1,8 @@
 import React from 'react';
+import { Container } from '../page';
 
 function Center() {
-  return <div>Center</div>;
+  return <Container variant="section">Center</Container>;
 }
 
 export default Center;

@@ -1,8 +1,9 @@
 import React from 'react';
+import { Container } from '../page';
 
 function Offer() {
   return (
-    <div>Offer</div>
+    <Container variant="section">Offer</Container>
   );
 }
 

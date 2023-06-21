@@ -1,8 +1,9 @@
 import React from 'react';
+import { Container } from '../page';
 
 function FirstVisit() {
   return (
-    <div>FirstVisit</div>
+    <Container variant="section">FirstVisit</Container>
   );
 }
 
