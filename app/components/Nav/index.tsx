@@ -47,46 +47,51 @@ function Nav() {
                 no-underline outline-none focus:shadow-[0_0_0_2px]"
               >
                 {menuItem.title}
-                {menuItem.dropDown && (
-                  <>
-                    {' '}
-                    <CaretDownIcon
-                      className="relative top-[1px] transition-transform
-                        duration-[250] ease-in group-data-[state=open]:-rotate-180"
-                      aria-hidden
-                    />
-                    <NavigationMenu.Content
-                      className="data-[motion=from-start]:animate-enterFromLeft
+                {
+                  menuItem.dropDown && (
+                    <>
+                      {' '}
+                      <CaretDownIcon
+                        className="relative top-[1px] transition-transform
+                              duration-[250ms] ease-in group-data-[state=open]:-rotate-180"
+                        aria-hidden
+                      />
+                    </>
+                  )
+                }
+              </MyLink>
+              {menuItem.dropDown && (
+                <NavigationMenu.Content
+                  className="data-[motion=from-start]:animate-enterFromLeft
                         data-[motion=from-end]:animate-enterFromRight
                         data-[motion=to-start]:animate-exitToLeft
                         data-[motion=to-end]:animate-exitToRight
                         absolute top-[48px] right-0 sm:w-auto
                         rounded-[6px] bg-white"
-                    >
-                      <ul
-                        className="list-none m-0 gap-x-[10px] px-[50px] py-[22px]"
-                      >
-                        {
-                          dropdownMenu.map((item) => (
-                            <ListItem
-                              key={item.title}
-                              aStyles="focus:shadow-[0_0_0_2px] focus:shadow-black
-                                hover:bg-white block select-none rounded-[6px] p-3
-                                text-[15px] leading-none no-underline outline-none transition-colors"
-                              title={item.title}
-                              titleStyles="text-violet12 mb-[5px] font-medium leading-[1.2]"
-                              childrenStyles="text-black leading-[1.4]"
-                              href={item.href}
-                            >
-                              {item.content}
-                            </ListItem>
-                          ))
-                        }
-                      </ul>
-                    </NavigationMenu.Content>
-                  </>
-                )}
-              </MyLink>
+                >
+                  <ul
+                    className="list-none m-0 gap-x-[10px] px-[50px] py-[22px]"
+                  >
+                    {
+                      dropdownMenu.map((item) => (
+                        <ListItem
+                          key={item.title}
+                          aStyles="focus:shadow-[0_0_0_2px] focus:shadow-black
+                            hover:bg-slate-500 block select-none rounded-[6px] p-3
+                            text-[15px] leading-none no-underline outline-none
+                            transition-colors"
+                          title={item.title}
+                          titleStyles="text-black mb-[5px] font-medium leading-[1.2]"
+                          childrenStyles="text-black leading-[1.4]"
+                          href={item.href}
+                        >
+                          {item.content}
+                        </ListItem>
+                      ))
+                    }
+                  </ul>
+                </NavigationMenu.Content>
+              )}
             </NavigationMenu.Item>
           ))
         }
