@@ -6,5 +6,10 @@
   ],
   "parserOptions": {
     "project": "./tsconfig.json"
+  },
+  "rules": {
+    "react/function-component-definition": [2, { "namedComponents": "arrow-function" }],
+    "react/jsx-props-no-spreading": [2, { "html": "ignore" }],
+    "react/require-default-props": [2, { "functions": "ignore" }]
   }
 }
