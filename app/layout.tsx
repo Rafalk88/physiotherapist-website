@@ -17,56 +17,57 @@ export const metadata = {
 
 type Variant =
   | 'section'
-  | 'div';
+  | 'div'
+  | 'main'
+  | 'footer';
 
 interface Props {
   variant: Variant
   children: React.ReactNode
   as?: React.ElementType
+  className?: string
 }
 
-function Wrapper({
-  variant, children, as,
-}: Props) {
+const Wrapper = ({
+  variant, children, as = 'div', className = '',
+}: Props) => {
   const tags: Record<Variant, React.ElementType> = {
     section: 'section',
     div: 'div',
+    main: 'main',
+    footer: 'footer',
   };
   const Tag = as || tags[variant];
 
-  return <Tag className="w-2/3 max-w-[1200px] mx-auto">{children}</Tag>;
-}
-
-Wrapper.defaultProps = {
-  as: 'div',
+  return <Tag className={`w-2/3 max-w-[1200px] mx-auto ${className}`}>{children}</Tag>;
 };
 
-export default function RootLayout({
+export const RootLayout = ({
   children,
 }: {
   children: React.ReactNode
-}) {
-  return (
-    <html lang="en">
-      <body className={`${inter.className} bg-slate-300`}>
-        <Wrapper variant="section">
-          <div className="flex justify-between items-center">
-            <Logo />
-            <div>
-              <TopComponent />
-              <Nav />
-            </div>
+}) => (
+  <html lang="en">
+    <body className={`${inter.className} bg-slate-300`}>
+      <Wrapper variant="section" as="nav">
+        <div className="flex justify-between items-center">
+          <Logo />
+          <div>
+            <TopComponent />
+            <Nav />
           </div>
-        </Wrapper>
+        </div>
+      </Wrapper>
 
-        <Wrapper variant="div">
-          {children}
-        </Wrapper>
+      <Wrapper variant="section" as="main">
+        {children}
+      </Wrapper>
 
-        <Wrapper variant="div">
-          <Footer />
-        </Wrapper>
-      </body>
-    </html>
-  );
-}
+      <Wrapper variant="section" as="footer">
+        <Footer />
+      </Wrapper>
+    </body>
+  </html>
+);
+
+export default RootLayout;
