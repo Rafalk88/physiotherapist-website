@@ -1,5 +1,10 @@
 import React from 'react';
 
+import Hero from './Hero';
+import Offer from './Offer';
+import Opinions from './Opinions';
+import Contact from '../components/Contact';
+
 type Variant =
   | 'section'
   | 'div'
@@ -11,10 +16,11 @@ interface Props {
   variant: Variant
   children: React.ReactNode
   as?: React.ElementType
+  className?: string
 }
-export function Container({
-  variant, children, as,
-}: Props) {
+export const Container = ({
+  variant, children, as = 'div', className = '',
+}: Props) => {
   const tags: Record<Variant, React.ElementType> = {
     section: 'section',
     div: 'div',
@@ -24,17 +30,25 @@ export function Container({
   };
   const Tag = as || tags[variant];
 
-  return <Tag className="min-w-screen min-h-screen">{children}</Tag>;
-}
-
-Container.defaultProps = {
-  as: 'div',
+  return (
+    <Tag className={`max-w-screen min-h-screen ${className}`}>
+      {children}
+    </Tag>
+  );
 };
 
-export default function Home() {
-  return (
-    <Container variant="main">
-      Hello world
-    </Container>
-  );
-}
+export const Home = () => (
+  <Container
+    variant="div"
+    className="before:absolute before:top-0 before:left-0 before:bg-hero-lg
+    before:bg-no-repeat before:bg-cover before:w-full before:h-[852px]
+    before:z-[-1]"
+  >
+    <Hero />
+    <Offer />
+    <Opinions />
+    <Contact />
+  </Container>
+);
+
+export default Home;

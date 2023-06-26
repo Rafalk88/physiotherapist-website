@@ -41,6 +41,9 @@ module.exports = {
           to: { opacity: 0 },
         },
       },
+      backgroundImage: {
+        'hero-lg': "url('/assets/hero.png')"
+      }
     },
     animation: {
       scaleIn: 'scaleIn 200ms ease',
