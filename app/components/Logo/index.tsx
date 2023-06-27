@@ -1,9 +1,38 @@
-import React from 'react';
+'use client';
 
-function Logo() {
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+
+import { useMediaQuery } from '../../hooks/useMediaQuery';
+
+const Logo = () => {
+  const isAboveMediumScreen = useMediaQuery('(min-width: 1024px)');
+
   return (
-    <div>Logo</div>
+    <Link
+      href="/home"
+      className="flex"
+    >
+      <Image
+        className="mr-[25px]"
+        src="/assets/logo.svg"
+        alt="company icon"
+        width={39}
+        height={50}
+      />
+      {
+        isAboveMediumScreen && (
+          <Image
+            src="/assets/FORWELL.svg"
+            alt="company name"
+            width={195}
+            height={48}
+          />
+        )
+      }
+    </Link>
   );
-}
+};
 
 export default Logo;
