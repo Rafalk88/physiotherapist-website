@@ -4,7 +4,6 @@ import { Inter } from 'next/font/google';
 
 import Nav from './components/Nav';
 import Footer from './components/Footer/Footer';
-import TopComponent from './components/TopComponent';
 import Logo from './components/Logo';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -39,7 +38,11 @@ const Wrapper = ({
   };
   const Tag = as || tags[variant];
 
-  return <Tag className={`w-2/3 max-w-[1200px] mx-auto ${className}`}>{children}</Tag>;
+  return (
+    <Tag className={`w-2/3 max-w-[1200px] mx-auto ${className}`}>
+      {children}
+    </Tag>
+  );
 };
 
 export const RootLayout = ({
@@ -48,24 +51,31 @@ export const RootLayout = ({
   children: React.ReactNode
 }) => (
   <html lang="en">
-    <body className={`${inter.className} bg-slate-300`}>
-      <Wrapper variant="section" as="nav">
-        <div className="flex justify-between items-center">
+    <body className={`${inter.className}`}>
+      <nav className="bg-dark-blue w-full fixed">
+        <Wrapper
+          className="flex justify-between items-center h-[105px]"
+          variant="section"
+          as="div"
+        >
           <Logo />
-          <div>
-            <TopComponent />
-            <Nav />
-          </div>
-        </div>
-      </Wrapper>
+          <Nav />
+        </Wrapper>
+      </nav>
 
-      <Wrapper variant="section" as="main">
+      <Wrapper
+        className="pt-[105px]"
+        variant="section"
+        as="main"
+      >
         {children}
       </Wrapper>
 
-      <Wrapper variant="section" as="footer">
-        <Footer />
-      </Wrapper>
+      <footer className="bg-dark-blue w-full">
+        <Wrapper variant="section" as="div">
+          <Footer />
+        </Wrapper>
+      </footer>
     </body>
   </html>
 );
