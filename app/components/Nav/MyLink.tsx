@@ -9,9 +9,9 @@ type Props = {
   linkStyles: string
 };
 
-function MyLink({
+const MyLink = ({
   href, children, dropDown, triggerStyles, linkStyles, ...props
-}: Props) {
+}: Props) => {
   if (dropDown) {
     return (
       <NavigationMenu.Trigger
@@ -32,6 +32,6 @@ function MyLink({
       {children}
     </NavigationMenu.Link>
   );
-}
+};
 
 export default MyLink;
