@@ -43,6 +43,10 @@ module.exports = {
       },
       backgroundImage: {
         'hero-lg': "url('/assets/hero.png')"
+      },
+      colors: {
+        'dark-blue': "#0C2A59",
+        "orange": "#FE5B00"
       }
     },
     animation: {
