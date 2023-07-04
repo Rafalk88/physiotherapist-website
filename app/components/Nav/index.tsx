@@ -29,6 +29,7 @@ const dropdownMenu = [
 
 const Nav = () => {
   const isAboveMediumScreen:boolean = useMediaQuery('(min-width: 1024px)');
+  const isSmall = useMediaQuery('(max-width: 1024px)');
   const [isMenuToggled, setIsMenuToggled] = React.useState<boolean>(false);
   const handleClick = () => {
     setIsMenuToggled(!isMenuToggled);
@@ -48,15 +49,15 @@ const Nav = () => {
               <MyLink
                 href={menuItem.href}
                 dropDown={menuItem.dropDown}
-                triggerStyles="border-b border-transparent hover:border-b
+                triggerStyles={`border-b border-transparent hover:border-b
                   hover:border-b-orange focus:shadow-black group flex
                   select-none items-center justify-between gap-[2px] px-3 py-2
-                  text-[15px] font-medium leading-none outline-none text-white
-                  focus:shadow-[0_0_0_2px]"
-                linkStyles="border-b border-transparent hover:border-b
+                  text-[${isSmall ? '12px' : '15px'}] font-medium leading-none outline-none text-white
+                  focus:shadow-[0_0_0_2px]`}
+                linkStyles={`border-b border-transparent hover:border-b
                   hover:border-b-orange focus:shadow-black block select-none
-                  px-3 py-2 text-[15px] font-medium leading-none no-underline
-                  outline-none focus:shadow-[0_0_0_2px] text-white"
+                  px-3 py-2 text-[${isSmall ? '12px' : '15px'}] font-medium leading-none no-underline
+                  outline-none focus:shadow-[0_0_0_2px] text-white`}
               >
                 {menuItem.title}
                 {
@@ -108,7 +109,7 @@ const Nav = () => {
               )}
             </NavigationMenu.Item>
           ))) : (
-            <div className="w-5/6 flex justify-end">
+            <div className="md:w-5/6 flex justify-end">
               <button
                 type="button"
                 aria-label="hamburger menu"

@@ -41,7 +41,7 @@ export const Home = () => (
   <Container
     variant="div"
     className="before:absolute before:top-[105px] before:left-0 before:bg-hero-lg
-    before:bg-no-repeat before:bg-cover before:w-full before:h-[853px]
+    before:bg-no-repeat before:bg-cover before:bg-right-top before:w-full before:h-[853px]
     before:z-[-1]"
   >
     <Hero />

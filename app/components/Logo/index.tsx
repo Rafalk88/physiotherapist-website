@@ -8,6 +8,7 @@ import { useMediaQuery } from '../../hooks/useMediaQuery';
 
 const Logo = () => {
   const isAboveMediumScreen = useMediaQuery('(min-width: 1024px)');
+  const isSmall = useMediaQuery('(max-width: 1024px)');
 
   return (
     <Link
@@ -15,7 +16,7 @@ const Logo = () => {
       className="flex"
     >
       <Image
-        className="mr-[25px]"
+        className="md:mr-[25px]"
         src="/assets/logo.svg"
         alt="company icon"
         width={39}
@@ -26,7 +27,7 @@ const Logo = () => {
           <Image
             src="/assets/FORWELL.svg"
             alt="company name"
-            width={195}
+            width={!isSmall ? 198 : 140}
             height={48}
           />
         )

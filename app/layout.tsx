@@ -56,7 +56,7 @@ export const RootLayout = ({
     <body className={`${inter.className}`}>
       <nav className="bg-dark-blue w-full fixed">
         <Wrapper
-          className="flex justify-between items-center h-[105px]"
+          className="flex justify-between items-center h-[105px] mx-6"
           variant="section"
           as="div"
         >

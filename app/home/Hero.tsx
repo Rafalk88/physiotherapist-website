@@ -11,7 +11,7 @@ const Hero = () => {
   const handleClick = () => {};
 
   return (
-    <section className="pt-4 ml-4 md:pt-[100px] md:ml-[63px] md:h-[853px]">
+    <section className="pt-4 ml-4 md:pt-[100px] xl:ml-[63px] md:h-[853px]">
       <Typography
         className="text-white pb-6"
         variant="h1"
