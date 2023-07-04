@@ -30,7 +30,9 @@ const dropdownMenu = [
 const Nav = () => {
   const isAboveMediumScreen:boolean = useMediaQuery('(min-width: 1024px)');
   const [isMenuToggled, setIsMenuToggled] = React.useState<boolean>(false);
-  const handleClick = () => setIsMenuToggled(!isMenuToggled);
+  const handleClick = () => {
+    setIsMenuToggled(!isMenuToggled);
+  };
 
   return (
     <NavigationMenu.Root
@@ -126,7 +128,13 @@ const Nav = () => {
               onClick={handleClick}
               aria-hidden
             >
-              <div className="fixed right-0 top-0 w-[300px] h-screen text-dark-blue bg-orange" role="menubar">
+              <div
+                className={`fixed right-0 top-0 w-[300px] h-screen
+                text-dark-blue bg-orange
+                  ${isMenuToggled ? 'data-[motion=from-end]:animate-enterFromRight' : 'data-[motion=to-end]:animate-exitToRight'}`}
+                role="menubar"
+                data-motion={isMenuToggled ? 'from-end' : 'to-end'}
+              >
                 <div className="flex justify-end p-12">
                   <button
                     type="button"
@@ -147,7 +155,7 @@ const Nav = () => {
                       <Link
                         key={item.title}
                         href={`/${item.href}`}
-                        className="cursor-pointer hover:text-black hover:underline"
+                        className="cursor-pointer"
                         onClick={() => setIsMenuToggled(!isMenuToggled)}
                       >
                         {item.title}
