@@ -2,21 +2,21 @@
 
 import React from 'react';
 
-type Props = {
-  className?: string
-  variant: React.ReactNode
-  color: React.ReactNode
-  children: React.ReactNode
-  onClick: () => void
+type ButtonProps = {
+  className?: string;
+  variant: 'contained' | 'outlined' | 'text';
+  color: 'primary' | 'secondary' | 'link';
+  children: React.ReactNode;
+  onClick: () => void;
 };
 
-const variantClasses = {
+const variantClasses: { [key in ButtonProps['variant']]: string } = {
   contained: 'rounded-full',
   outlined: 'rounded-full border',
   text: 'underline',
 };
 
-const colorClasses = {
+const colorClasses: { [key in ButtonProps['color']]: string } = {
   primary: 'bg-orange text-dark-blue',
   secondary: 'border-orange text-dark-blue',
   link: '',
@@ -29,7 +29,7 @@ const Button = ({
   children,
   onClick,
   ...props
-}: Props) => {
+}: ButtonProps) => {
   const variantStyles = variantClasses[variant];
   const colorStyles = colorClasses[color];
 
