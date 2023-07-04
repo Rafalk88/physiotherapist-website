@@ -39,7 +39,9 @@ const Wrapper = ({
   const Tag = as || tags[variant];
 
   return (
-    <Tag className={`w-2/3 max-w-[1200px] mx-auto ${className}`}>
+    <Tag className={`mx-2 md:w-2/3 md:max-w-[1200px] md:mx-auto
+      ${className}`}
+    >
       {children}
     </Tag>
   );
