@@ -1,7 +1,5 @@
 import React from 'react';
 
-function Anchor() {
-  return <div>Anchor</div>;
-}
+const Anchor = () => <div>Anchor</div>;
 
 export default Anchor;
