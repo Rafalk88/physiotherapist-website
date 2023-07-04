@@ -30,8 +30,8 @@ const Button = ({
   onClick,
   ...props
 }: ButtonProps) => {
-  const variantStyles = variantClasses[variant];
-  const colorStyles = colorClasses[color];
+  const variantStyles = variantClasses[variant as keyof typeof variantClasses];
+  const colorStyles = colorClasses[color as keyof typeof colorClasses];
 
   return (
     <button
