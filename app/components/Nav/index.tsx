@@ -11,11 +11,11 @@ import { ListItem } from './ListItem';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 
 const menu = [
-  { title: 'O Centrum', href: '/center' },
-  { title: 'Pierwsza wizyta', href: '/first-visit' },
-  { title: 'Oferta', href: '/offer' },
-  { title: 'Zespół', href: '/team', dropDown: true },
-  { title: 'Kontakt', href: '/contact' },
+  { title: 'O Centrum', href: 'center' },
+  { title: 'Pierwsza wizyta', href: 'first-visit' },
+  { title: 'Oferta', href: 'offer' },
+  { title: 'Zespół', href: 'team', dropDown: true },
+  { title: 'Kontakt', href: 'contact' },
 ];
 
 const dropdownMenu = [
