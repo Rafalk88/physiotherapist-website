@@ -26,7 +26,7 @@ const Layout = ({ children, isTopOfPage }: Props) => {
       <Navbar 
         isTopOfPage={isTopOfPage}
       />
-      <main className="max-w-full min-h-[calc(100vh-105px)]">
+      <main className="max-w-full min-h-[calc(100vh-105px)] pt-[105px]">
         {children}
       </main>
       <Footer />

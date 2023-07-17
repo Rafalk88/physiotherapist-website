@@ -25,7 +25,7 @@ module.exports = {
         "arrow-right": 'url("../public/assets/RightArrow.svg")',
       },
       backgroundImage: {
-        'hero': "url('../public/assets/hero.jpg')",
+        'hero': "url('../public/assets/hero.png')",
       },
       dropShadow: {
         'md': '0 4px 2px rgb(0 0 0 / 0.35)'
