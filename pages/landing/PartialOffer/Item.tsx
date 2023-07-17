@@ -1,13 +1,13 @@
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image"
 import Link from "next/link"
-import Typography from "../../../components/Typography"
-import rightArrow from "../../../public/assets/chevron_right.svg"
+import Typography from "@/components/Typography"
+import rightArrow from "@/public/assets/chevron_right.svg"
 import itemsDataItem from './PartialOffer'
 
 
 interface itemsDataItem {
   item: {
-    image: string
+    image: StaticImageData
     title: string
     content: string
     link: string
