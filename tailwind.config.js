@@ -13,12 +13,12 @@ module.exports = {
     },
     extend: {
       colors: {
-        "blue": "#0133FF",
         "dark-grey": "#4A4661",
         "light-grey": "#F4F4F5",
         "bg-grey": "#F5F5F5",
         "light-brown": "#DFD7BF",
         "dark-brown": "#3F2305",
+        "pistachio": "#38E172"
       },
       content: {
         "arrow-left": 'url("../public/assets/LeftArrow.svg")',

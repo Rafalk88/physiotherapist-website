@@ -1,4 +1,5 @@
 import Hero from "./Hero"
+import PartialOffer from "./PartialOffer/PartialOffer"
 
 const Landing = () => {
   return (
@@ -10,6 +11,7 @@ const Landing = () => {
           justify-between items-center xl:mb-20"
         >
           <Hero />
+          <PartialOffer />
         </section>
       </div>
     </section>
