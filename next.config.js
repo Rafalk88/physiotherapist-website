@@ -1,14 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async redirects() {
-    return [
+  reactStrictMode: true,
+  images: {
+    remotePatterns: [
       {
-        source: '/',
-        destination: '/home',
-        permanent: true,
-      },
+        protocol: 'https',
+        hostname: 'picsum.photos',
+        port: '',
+        pathname: '/**'
+      }
     ]
-  },
+  }
 }
 
 module.exports = nextConfig
