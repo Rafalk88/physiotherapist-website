@@ -15,7 +15,7 @@ const Anchor = () => {
       {
         !isVisible ? (
           <section className="w-[80px] h-[80px] rounded-full flex justify-center
-            items-center bg-blue fixed top-[85%] right-[1%] cursor-pointer
+            items-center bg-light-brown fixed top-[85%] right-[1%] cursor-pointer
             drop-shadow-md hover:bg-blue/80 z-[1]"
           >
             <button 

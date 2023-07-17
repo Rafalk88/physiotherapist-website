@@ -1,6 +1,6 @@
 import Navbar from "./Navbar"
 import Footer from "./Footer"
-import Anchor from "./Anchor"
+import FloatingContactIcon from "./FloatingContactIcon"
 
 import { useMediaQuery } from "@/hooks/useMediaQuery"
 
@@ -17,7 +17,7 @@ const Layout = ({ children, isTopOfPage }: Props) => {
       {
         isAboveMediumScreens ? (
           <>
-            <Anchor />
+            <FloatingContactIcon />
           </>
         )
         :
