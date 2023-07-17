@@ -1,22 +1,22 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
-import { Button } from "@chakra-ui/react"
 
 import Typography from "../Typography"
 import { useMediaQuery } from "../../hooks/useMediaQuery"
 
-import Logo from "../../public/assets/logo_black.png"
+import Logo from "../../public/assets/logo.svg"
+import LogoText from "../../public/assets/FORWELL.svg";
 import { RxHamburgerMenu } from "react-icons/rx"
 import { XMarkIcon } from "@heroicons/react/24/outline"
 
 const flexBetween = "flex items-center justify-between"
 export const menu = [
-  {text: "Główna", route: ""},
-  {text: "O nas", route: "about"},
-  {text: "Katalizatory", route: "catalysts"},
-  {text: "Syntezy na zlecenie", route: "synthesis"},
-  {text: "Sklep", route: "shop", mq: "sm"},
+  {text: "O centrum", route: ""},
+  {text: "Pierwsza wizyta", route: "first-visit"},
+  {text: "Oferta", route: "offer"},
+  {text: "Zespół", route: "team"},
+  {text: "Kontakt", route: "contact"},
 ];
 
 type Props = {
@@ -27,19 +27,19 @@ export const Navbar = ({ isTopOfPage }: Props) => {
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false)
   const isAboveMediumScreens: boolean = useMediaQuery("(min-width: 1060px)")
   const navbarBackground = isTopOfPage ? "" : "drop-shadow bg-white"
-  const topPosition = isTopOfPage ? "top-[50px]" : "top-0"
 
   const handleClick = () => setIsMenuToggled(!isMenuToggled)
 
   return (
-    <nav className={`${navbarBackground} ${flexBetween} fixed ${topPosition} z-30 w-full
-    py-3`}
+    <nav className={`${navbarBackground} ${flexBetween} fixed z-30 w-full
+    h-[105px] py-3 bg-light-brown`}
     >
       <div className={`${flexBetween} mx-auto w-5/6 max-w-[1200px]`}>
         <div className={`${flexBetween} max-w-[196px] pr-6`}>
           <div>
-            <Link href="/" className="cursor-pointer" passHref>
-              <Image src={Logo} alt={"Logo"} />
+            <Link href="/" className="cursor-pointer flex" passHref>
+              <Image src={Logo} alt={"Logo"} className="mr-4" />
+              <Image src={LogoText} alt={"Logo-name"} />
             </Link>
           </div>
         </div>
@@ -54,10 +54,8 @@ export const Navbar = ({ isTopOfPage }: Props) => {
               >
                 {
                   menu.map(item => {
-                    if (!item.mq) {
                       return (
-                        <div className={`flex flex-col before:content-[''] before:w-[135px]
-                          before:h-[1px] before:bg-black before:hover:bg-blue hover:text-blue`}
+                        <div className={`flex flex-col hover:text-white`}
                           key={item.text}
                         >
                           <Link href={`/${item.route}`} className="cursor-pointer">
@@ -65,21 +63,9 @@ export const Navbar = ({ isTopOfPage }: Props) => {
                           </Link>
                         </div>
                       )
-                    }
-                  })
+                    })
                 }
               </Typography>
-
-              <Link href={"/shop"} passHref>
-                <Button
-                  className="w-[125px] h-[42px]"
-                  variant="primary"
-                >
-                  Sklep
-                </Button>
-              </Link>
-
-              {/* SEARCH BTN HERE */}
             </div>
           ) : (
             <div className="w-5/6 flex justify-end">

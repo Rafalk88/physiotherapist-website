@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Image from 'next/image'
-import Contact from '@/pages/landing/Contact'
+import Contact from '@/pages/contact/Contact'
 
 import Typography from '../Typography'
 

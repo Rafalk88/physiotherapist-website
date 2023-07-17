@@ -1,4 +1,3 @@
-import TopDiv from "./TopDiv"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
 import Anchor from "./Anchor"
@@ -18,7 +17,6 @@ const Layout = ({ children, isTopOfPage }: Props) => {
       {
         isAboveMediumScreens ? (
           <>
-            <TopDiv />
             <Anchor />
           </>
         )
@@ -28,7 +26,7 @@ const Layout = ({ children, isTopOfPage }: Props) => {
       <Navbar 
         isTopOfPage={isTopOfPage}
       />
-      <main>
+      <main className="max-w-full min-h-[calc(100vh-105px)]">
         {children}
       </main>
       <Footer />
