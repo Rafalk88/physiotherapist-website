@@ -4,9 +4,6 @@ import Typography from "@/components/Typography"
 import rightArrow from "@/public/assets/chevron_right.svg"
 import itemsDataItem from './PartialOffer'
 
-import RectangleItemImage from "@/public/assets/RectangleItem.png";
-
-
 interface itemsDataItem {
   item: {
     image: StaticImageData
@@ -24,7 +21,7 @@ const Item = ({ item }: itemsDataItem) => {
     <article className="w-1/3 bg-white border rounded-[20px] drop-shadow-[0_1px_4px_rgba(16,48,97,0.35)]">
       <Image
         className="relative"
-        src={RectangleItemImage}
+        src={image}
         alt={`${title}-image`}
         width={403}
         height={269}
