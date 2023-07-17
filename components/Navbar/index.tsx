@@ -6,7 +6,6 @@ import Typography from "../Typography"
 import { useMediaQuery } from "../../hooks/useMediaQuery"
 
 import Logo from "../../public/assets/logo.svg"
-import LogoText from "../../public/assets/FORWELL.svg";
 import { RxHamburgerMenu } from "react-icons/rx"
 import { XMarkIcon } from "@heroicons/react/24/outline"
 
@@ -35,21 +34,18 @@ export const Navbar = ({ isTopOfPage }: Props) => {
     h-[105px] py-3 bg-light-brown`}
     >
       <div className={`${flexBetween} mx-auto w-5/6 max-w-[1200px]`}>
-        <div className={`${flexBetween} max-w-[196px] pr-6`}>
-          <div>
-            <Link href="/" className="cursor-pointer flex" passHref>
-              <Image src={Logo} alt={"Logo"} className="mr-4" />
-              <Image src={LogoText} alt={"Logo-name"} />
-            </Link>
-          </div>
+        <div>
+          <Link href="/" className={`${flexBetween} cursor-pointer`} passHref>
+            <Image src={Logo} alt={"Logo"} className="mr-4" />
+          </Link>
         </div>
 
         {
           isAboveMediumScreens ? (
-            <div className={`${flexBetween} md:w-5/6`}>
+            <div>
               <Typography 
-                className={`${flexBetween} gap-8`}
-                variant="small"
+                className={`${flexBetween} gap-8 font-bold`}
+                variant="body"
                 as="ul"
               >
                 {
@@ -58,7 +54,7 @@ export const Navbar = ({ isTopOfPage }: Props) => {
                         <div className={`flex flex-col hover:text-white`}
                           key={item.text}
                         >
-                          <Link href={`/${item.route}`} className="cursor-pointer">
+                          <Link href={`/${item.route}`} className="cursor-pointer text-dark-brown">
                             {item.text}
                           </Link>
                         </div>
