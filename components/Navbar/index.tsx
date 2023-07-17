@@ -51,10 +51,11 @@ export const Navbar = ({ isTopOfPage }: Props) => {
                 {
                   menu.map(item => {
                       return (
-                        <div className={`flex flex-col hover:text-white`}
+                        <div className={`flex flex-col`}
                           key={item.text}
                         >
-                          <Link href={`/${item.route}`} className="cursor-pointer text-dark-brown">
+                          <Link href={`/${item.route}`} className="cursor-pointer text-dark-brown hover:text-white
+                            transform duration-500 ease-in-out">
                             {item.text}
                           </Link>
                         </div>
