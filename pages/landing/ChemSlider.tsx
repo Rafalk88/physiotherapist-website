@@ -9,7 +9,7 @@
 
 // import "@splidejs/react-splide/css"
 
-// const ChemSlider = () => {
+const ChemSlider = () => {
 //   const isAboveMediumScreens: boolean = useMediaQuery("(min-width: 767px)")
 //   const height = isAboveMediumScreens ? 430 : 200
 //   const arrows = isAboveMediumScreens ? true : false
@@ -28,7 +28,8 @@
 //     pagination: false,
 //   }
 
-//   return (
+  return (
+    <div>Chemslider</div>
 //     <Splide 
 //       tag="section"
 //       aria-label="Chemistry slider"
@@ -60,9 +61,7 @@
 //         />
 //       </SplideSlide>
 //     </Splide>
-//   )
-// }
+  )
+}
 
-// export default ChemSlider
-
-export {}
+export default ChemSlider
