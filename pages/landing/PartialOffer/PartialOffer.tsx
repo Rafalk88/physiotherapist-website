@@ -11,10 +11,10 @@ const items = [
     image: RectangleItemImage, title: 'Tytuł1', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec metus convallis lectus vulputate imperdiet eget sit amet nibh. Sed metus nisl, rhoncus a nibh eget, suscipit consequat arcu. Aliquam interdum congue lectus, vitae consequat nibh pellentesque vitae. ', link: '/', newOffer: true,
   },
   {
-    image: RectangleItemImage, title: 'Tytuł2', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec metus convallis lectus vulputate imperdiet eget sit amet nibh. Aliquam interdum congue lectus, vitae consequat nibh pellentesque vitae. Aenean sagittis tortor quis mauris pharetra finibus.', link: '/',
+    image: RectangleItemImage, title: 'Tytuł2', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec metus convallis lectus vulputate imperdiet eget sit amet nibh. Aliquam interdum congue lectus, vitae consequat nibh pellentesque vitae. Aenean sagittis tortor quis mauris pharetra finibus.', link: '/', newOffer: false,
   },
   {
-    image: RectangleItemImage, title: 'Tytuł3', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec metus convallis lectus vulputate imperdiet eget sit amet nibh. Sed metus nisl, rhoncus a nibh eget, suscipit consequat arcu.', link: '/',
+    image: RectangleItemImage, title: 'Tytuł3', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec metus convallis lectus vulputate imperdiet eget sit amet nibh. Sed metus nisl, rhoncus a nibh eget, suscipit consequat arcu.', link: '/', newOffer: false,
   },
 ];
 
