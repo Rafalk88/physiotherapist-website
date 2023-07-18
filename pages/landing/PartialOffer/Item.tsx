@@ -1,8 +1,8 @@
-import Image, { StaticImageData } from "next/image"
-import Link from "next/link"
-import Typography from "@/components/Typography"
-import rightArrow from "@/public/assets/chevron_right.svg"
-import itemsDataItem from './PartialOffer'
+import React from 'react';
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
+import Typography from '@/components/Typography';
+import rightArrow from '@/public/assets/chevron_right.svg';
 
 interface itemsDataItem {
   item: {
@@ -15,7 +15,9 @@ interface itemsDataItem {
 }
 
 const Item = ({ item }: itemsDataItem) => {
-  const { image, title, content, link, newOffer } = item
+  const {
+    image, title, content, link, newOffer,
+  } = item;
 
   return (
     <article className="w-1/3 bg-white border rounded-[20px] drop-shadow-[0_1px_4px_rgba(16,48,97,0.35)]">
@@ -75,9 +77,8 @@ const Item = ({ item }: itemsDataItem) => {
           />
         </Link>
       </div>
-      
     </article>
-  )
-}
+  );
+};
 
-export default Item
+export default Item;
