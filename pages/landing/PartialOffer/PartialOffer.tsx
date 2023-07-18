@@ -43,8 +43,13 @@ const PartialOffer = () => (
 
     <div className="flex gap-3.5 pb-16">
       {
-          items.map((item) => <Item key={item.title} item={item} />)
-        }
+        items.map((item) => {
+          if (item.image) {
+            return <Item key={item.title} item={item} />;
+          }
+          return null;
+        })
+      }
     </div>
   </div>
 );
