@@ -17,7 +17,11 @@ interface itemsDataItem {
 const Item = ({ item }: itemsDataItem) => {
   const {
     image, title, content, link, newOffer,
-  } = item;
+  } = item || {};
+
+  if (!image) {
+    return '';
+  }
 
   return (
     <article className="w-1/3 bg-white border rounded-[20px] drop-shadow-[0_1px_4px_rgba(16,48,97,0.35)]">
