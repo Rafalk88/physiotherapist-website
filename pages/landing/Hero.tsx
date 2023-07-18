@@ -1,16 +1,18 @@
-import { useRouter } from "next/router"
-import Typography from "../../components/Typography"
+import React from 'react';
+import { useRouter } from 'next/router';
+
+import Typography from '../../components/Typography';
 
 const Hero = () => {
-  const router = useRouter()
+  const router = useRouter();
 
   const handleClick = () => {
-    router.push('/first-visit')
-  }
+    router.push('/first-visit');
+  };
 
   return (
     <div className="w-full h-[854px]">
-      <div 
+      <div
         className="absolute top-[105px] left-0 bg-hero bg-center w-full h-[854px] z-[-1]"
         aria-label="background image"
       />
@@ -46,7 +48,7 @@ const Hero = () => {
         </Typography>
       </button>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
