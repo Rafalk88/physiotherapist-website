@@ -1,14 +1,13 @@
-import { useState } from 'react'
-import Image from 'next/image'
-import Contact from '@/pages/contact/Contact'
+import React from 'react';
+import Image from 'next/image';
+import Contact from '@/pages/contact/Contact';
 
-import Typography from '../Typography'
-
-import SecuredLetter from "@/public/assets/SecuredLetter.svg"
-import CloseIcon from "@/public/assets/close-icon.svg"
+import SecuredLetter from '@/public/assets/SecuredLetter.svg';
+import CloseIcon from '@/public/assets/close-icon.svg';
+import Typography from '../Typography';
 
 const Anchor = () => {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = React.useState(false);
 
   return (
     <>
@@ -18,13 +17,14 @@ const Anchor = () => {
             items-center bg-light-brown fixed top-[85%] right-[1%] cursor-pointer
             drop-shadow-md hover:bg-blue/80 z-[1]"
           >
-            <button 
+            <button
               className="cursor-pointer"
-              onClick={() => setIsVisible(prev => !prev)}
+              type="button"
+              onClick={() => setIsVisible((prev) => !prev)}
             >
               <Image
                 src={SecuredLetter}
-                alt={"Contact-icon"}
+                alt="Contact-icon"
                 width={46}
                 height={46}
               />
@@ -32,7 +32,7 @@ const Anchor = () => {
           </section>
         ) : null
       }
-      
+
       {
         isVisible ? (
           <section className="fixed top-[32%] right-[5%] bg-white rounded-xl shadow-xl p-5 z-[25]">
@@ -49,10 +49,10 @@ const Anchor = () => {
                 className="cursor-pointer"
                 src={CloseIcon}
                 alt="close-icon"
-                onClick={() => setIsVisible(prev => !prev)}
+                onClick={() => setIsVisible((prev) => !prev)}
               />
             </div>
-            <Contact 
+            <Contact
               main={false}
               setIsVisible={setIsVisible}
             />
@@ -60,7 +60,7 @@ const Anchor = () => {
         ) : null
       }
     </>
-  )
-}
+  );
+};
 
-export default Anchor
+export default Anchor;

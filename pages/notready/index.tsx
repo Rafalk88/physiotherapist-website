@@ -1,17 +1,17 @@
-import { useEffect } from 'react'
-import Link from "next/link"
-import { useRouter } from "next/router"
+import React from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-import Typography from "@/components/Typography"
+import Typography from '@/components/Typography';
 
 const NotReady = () => {
-  const router = useRouter()
+  const router = useRouter();
 
-  useEffect(() => {
+  React.useEffect(() => {
     setTimeout(() => {
-      router.push('/')
-    }, 6500)
-  }, [router])
+      router.push('/');
+    }, 6500);
+  }, [router]);
 
   return (
     <section className="w-full h-[calc(100vh-120px)] flex justify-center
@@ -29,20 +29,23 @@ const NotReady = () => {
           variant="h4"
           as="h4"
         >
-          Tutaj wkrótce dostępne będą materiały. Pracujemy nad nimi najszybciej jak to
-          mozliwe. Prosimy uzbrój się w cierpliwość i serdecznie zapraszamy do pozostałej
-          części strony
+          Tutaj wkrótce dostępne będą materiały. Pracujemy
+          nad nimi najszybciej jak to mozliwe. Prosimy
+          uzbrój się w cierpliwość i serdecznie zapraszamy
+          do pozostałej części strony
         </Typography>
         <Typography
           variant="body"
           as="p"
         >
-          Powróć do <Link href="/" className="underline text-blue-500">Strony Głównej</Link>
+          Powróć do
+          {' '}
+          <Link href="/" className="underline text-blue-500">Strony Głównej</Link>
         </Typography>
       </div>
-      
-    </section>
-  )
-}
 
-export default NotReady
+    </section>
+  );
+};
+
+export default NotReady;
