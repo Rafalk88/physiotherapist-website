@@ -11,6 +11,16 @@
     "react/jsx-props-no-spreading": [2, { "html": "ignore" }],
     "react/require-default-props": [2, { "functions": "ignore" }],
     "max-len": ["error", { "code": 80, "tabWidth": 2, "ignoreStrings": true ,"ignoreRegExpLiterals": true }],
-    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".tsx"] }]
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".tsx"] }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
   }
 }
