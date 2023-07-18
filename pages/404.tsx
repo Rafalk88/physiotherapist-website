@@ -1,25 +1,25 @@
-import { useEffect } from 'react'
-import Link from "next/link"
-import Image from "next/image"
-import { useRouter } from "next/router"
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 
-import Typography from "@/components/Typography"
+import Typography from '@/components/Typography';
 
 const NotFound = () => {
-  const router = useRouter()
+  const router = useRouter();
 
-  useEffect(() => {
+  React.useEffect(() => {
     setTimeout(() => {
-      router.push('/')
-    }, 3000)
-  }, [router])
+      router.push('/');
+    }, 3000);
+  }, [router]);
 
   return (
     <section className="w-full h-[calc(100vh-120px)] flex justify-center
       items-center gap-12"
     >
       <figure>
-        <Image 
+        <Image
           src="/assets/monitor.png"
           alt="Error-404-icon"
           width={300}
@@ -45,12 +45,14 @@ const NotFound = () => {
           variant="body"
           as="p"
         >
-          Powróć do <Link href="/" className="underline text-blue-500">Strony Głównej</Link>
+          Powróć do
+          {' '}
+          <Link href="/" className="underline text-blue-500">Strony Głównej</Link>
         </Typography>
       </div>
-      
-    </section>
-  )
-}
 
-export default NotFound
+    </section>
+  );
+};
+
+export default NotFound;
