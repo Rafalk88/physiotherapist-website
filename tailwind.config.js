@@ -19,6 +19,7 @@ module.exports = {
         'light-brown': '#DFD7BF',
         'dark-brown': '#3F2305',
         pistachio: '#38E172',
+        gold: '#FFCD3C',
       },
       content: {
         'arrow-left': 'url("../public/assets/LeftArrow.svg")',
