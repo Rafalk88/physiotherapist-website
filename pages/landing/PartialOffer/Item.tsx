@@ -24,9 +24,8 @@ const Item = ({ item }: itemsDataItem) => {
   }
 
   return (
-    <article className="w-1/3 bg-white border rounded-[20px] drop-shadow-[0_1px_4px_rgba(16,48,97,0.35)]">
+    <article className="relative w-1/3 bg-white border rounded-[20px] drop-shadow-[0_1px_4px_rgba(16,48,97,0.35)]">
       <Image
-        className="relative"
         src={image}
         alt={`${title}-image`}
         width={403}
