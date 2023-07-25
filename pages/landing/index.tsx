@@ -2,6 +2,7 @@ import React from 'react';
 
 import Hero from './Hero';
 import PartialOffer from './PartialOffer/PartialOffer';
+import Opinions from './Opinions/Opinions';
 
 const Landing = () => (
   <section>
@@ -13,6 +14,7 @@ const Landing = () => (
       >
         <Hero />
         <PartialOffer />
+        <Opinions />
       </section>
     </div>
   </section>
